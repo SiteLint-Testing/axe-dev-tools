@@ -37,6 +37,104 @@
     </script>
 </head>
 <body>
+
+    <label for="page-selector">Select a Page:</label>
+    <select id="page-selector" name="pages" onchange="location = this.value;">
+        <option value="index.html">Choose page</option>
+        <option value="index.html">1. Index</option>
+        <option value="accesskey-attribute-value-should-be-unique.html">2. Accesskey Attribute Value Should Be Unique</option>
+        <option value="active-area-elements-must-have-alt-text.html">3. Active Area Elements Must Have Alt Text</option>
+        <option value="all-page-content-should-be-contained-by-landmarks.html">4. All Page Content Should Be Contained By Landmarks</option>
+        <option value="all-touch-targets-must-be-24px-large-or-leave-sufficient-space.html">5. All Touch Targets Must Be 24px Large Or Leave Sufficient Space</option>
+        <option value="alternative-text-of-images-should-not-be-repeated-as-text.html">6. Alternative Text Of Images Should Not Be Repeated As Text</option>
+        <option value="aria-attributes-must-conform-to-valid-names.html">7. Aria Attributes Must Conform To Valid Names</option>
+        <option value="aria-attributes-must-conform-to-valid-values.html">8. Aria Attributes Must Conform To Valid Values</option>
+        <option value="aria-braille-attributes-must-have-a-non-braille-equivalent.html">9. Aria Braille Attributes Must Have A Non Braille Equivalent</option>
+        <option value="aria-commands-must-have-an-accessible-name.html">10. Aria Commands Must Have An Accessible Name</option>
+        <option value="aria-dialog-and-alert-dialog-nodes-should-have-an-accessible-name.html">11. Aria Dialog And Alert Dialog Nodes Should Have An Accessible Name</option>
+        <option value="aria-hidden-element-must-not-be-focusable-or-contain-focusable-elements.html">12. Aria Hidden Element Must Not Be Focusable Or Contain Focusable Elements</option>
+        <option value="aria-hidden-true-must-not-be-present-on-the-document-body.html">13. Aria Hidden True Must Not Be Present On The Document Body</option>
+        <option value="aria-input-fields-must-have-an-accessible-name.html">14. Aria Input Fields Must Have An Accessible Name</option>
+        <option value="aria-meter-nodes-must-have-an-accessible-name.html">15. Aria Meter Nodes Must Have An Accessible Name</option>
+        <option value="aria-progressbar-nodes-must-have-an-accessible-name.html">16. Aria Progressbar Nodes Must Have An Accessible Name</option>
+        <option value="aria-role-should-be-appropriate-for-the-element.html">17. Aria Role Should Be Appropriate For The Element</option>
+        <option value="aria-roles-used-must-conform-to-valid-values.html">18. Aria Roles Used Must Conform To Valid Values</option>
+        <option value="aria-toggle-fields-must-have-an-accessible-name.html">19. Aria Toggle Fields Must Have An Accessible Name</option>
+        <option value="aria-tooltip-nodes-must-have-an-accessible-name.html">20. Aria Tooltip Nodes Must Have An Accessible Name</option>
+        <option value="aria-treeitem-nodes-should-have-an-accessible-name.html">21. Aria Treeitem Nodes Should Have An Accessible Name</option>
+        <option value="aside-should-not-be-contained-in-another-landmark.html">22. Aside Should Not Be Contained In Another Landmark</option>
+        <option value="autocomplete-attribute-must-be-used-correctly.html">23. Autocomplete Attribute Must Be Used Correctly</option>
+        <option value="banner-landmark-should-not-be-contained-in-another-landmark.html">24. Banner Landmark Should Not Be Contained In Another Landmark</option>
+        <option value="blink-elements-are-deprecated-and-must-not-be-used.html">25. Blink Elements Are Deprecated And Must Not Be Used</option>
+        <option value="certain-aria-roles-must-be-contained-by-particular-parents.html">26. Certain Aria Roles Must Be Contained By Particular Parents</option>
+        <option value="certain-aria-roles-must-contain-particular-children.html">27. Certain Aria Roles Must Contain Particular Children</option>
+        <option value="check-that-aria-attributes-are-not-used.html">28. Check That Aria Attributes Are Not Used</option>
+        <option value="checks-all-elements-with-role.html">29. Checks All Elements With Role</option>
+        <option value="contentinfo-landmark-should-not-be-contained-in-another-landmark.html">30. Contentinfo Landmark Should Not Be Contained In Another Landmark</option>
+        <option value="delayed-refresh-must-not-be-used.html">31. Delayed Refresh Must Not Be Used</option>
+        <option value="delayed-refresh-under-20-hours-must-not-be-used.html">32. Delayed Refresh Under 20 Hours Must Not Be Used</option>
+        <option value="deprecated-aria-roles-must-not-be-used.html">33. Deprecated Aria Roles Must Not Be Used</option>
+        <option value="document-should-have-one-main-landmark.html">34. Document Should Have One Main Landmark</option>
+        <option value="document-should-not-have-more-than-one-banner-landmark.html">35. Document Should Not Have More Than One Banner Landmark</option>
+        <option value="document-should-not-have-more-than-one-contentinfo-landmark.html">36. Document Should Not Have More Than One Contentinfo Landmark</option>
+        <option value="documents-must-have-title-element-to-aid-in-navigation.html">37. Documents Must Have Title Element To Aid In Navigation</option>
+        <option value="dt-and-dd-elements-must-be-contained-by-a-dl.html">38. Dt And Dd Elements Must Be Contained By A Dl</option>
+        <option value="elements-must-meet-enhanced-color-contrast-ratio-thresholds.html">39. Elements Must Meet Enhanced Color Contrast Ratio Thresholds</option>
+        <option value="elements-must-meet-minimum-color-contrast-ratio-thresholds.html">40. Elements Must Meet Minimum Color Contrast Ratio Thresholds</option>
+        <option value="elements-must-only-directly-contain-properly-ordered-and-groups-script-template-or-div-elements.html">41. Elements Must Only Directly Contain Properly Ordered And Groups Script Template Or Div Elements</option>
+        <option value="elements-must-only-use-permitted-aria-attributes.html">42. Elements Must Only Use Permitted Aria Attributes</option>
+        <option value="elements-must-only-use-supported-aria-attributes.html">43. Elements Must Only Use Supported Aria Attributes</option>
+        <option value="elements-should-not-have-tabindex-greater-than-zero.html">44. Elements Should Not Have Tabindex Greater Than Zero</option>
+        <option value="ensure-elements-marked-as-presentational-are-consistently-ignored.html">45. Ensure Elements Marked As Presentational Are Consistently Ignored</option>
+        <option value="ensures-landmarks-are-unique.html">46. Ensures Landmarks Are Unique</option>
+        <option value="form-elements-must-have-labels.html">47. Form Elements Must Have Labels</option>
+        <option value="form-elements-should-have-a-visible-label.html">48. Form Elements Should Have A Visible Label</option>
+        <option value="form-field-must-not-have-multiple-label-elements.html">49. Form Field Must Not Have Multiple Label Elements</option>
+        <option value="frames-must-have-a-unique-title-attribute.html">50. Frames Must Have A Unique Title Attribute</option>
+        <option value="frames-must-have-an-accessible-name.html">51. Frames Must Have An Accessible Name</option>
+        <option value="frames-should-be-tested-with-axe-core.html">52. Frames Should Be Tested With Axe Core</option>
+        <option value="frames-with-focusable-content-must-not-have-tabindex--1.html">53. Frames With Focusable Content Must Not Have Tabindex -1</option>
+        <option value="heading-levels-should-only-increase-by-one.html">54. Heading Levels Should Only Increase By One</option>
+        <option value="headings-should-not-be-empty.html">55. Headings Should Not Be Empty</option>
+        <option value="html-element-must-have-a-lang-attribute.html">56. Html Element Must Have A Lang Attribute</option>
+        <option value="html-element-must-have-a-valid-value-for-the-lang-attribute.html">57. Html Element Must Have A Valid Value For The Lang Attribute</option>
+        <option value="html-elements-with-lang-and-xml-lang-must-have-the-same-base-language.html">58. Html Elements With Lang And Xml Lang Must Have The Same Base Language</option>
+        <option value="ids-used-in-aria-and-labels-must-be-unique.html">59. Ids Used In Aria And Labels Must Be Unique</option>
+        <option value="images-must-have-alternate-text.html">60. Images Must Have Alternate Text</option>
+        <option value="inline-text-spacing-must-be-adjustable-with-custom-stylesheets.html">61. Inline Text Spacing Must Be Adjustable With Custom Stylesheets</option>
+        <option value="input-buttons-must-have-discernible-text.html">62. Input Buttons Must Have Discernible Text</option>
+        <option value="interactive-controls-must-not-be-nested.html">63. Interactive Controls Must Not Be Nested</option>
+        <option value="lang-attribute-must-have-a-valid-value.html">64. Lang Attribute Must Have A Valid Value</option>
+        <option value="li-elements-must-be-contained-in-a-ul-or-ol.html">65. Li Elements Must Be Contained In A Ul Or Ol</option>
+        <option value="links-must-be-distinguishable-without-relying-on-color.html">66. Links Must Be Distinguishable Without Relying On Color</option>
+        <option value="links-must-have-discernible-text.html">67. Links Must Have Discernible Text</option>
+        <option value="links-with-same-name-must-have-a-similar-purpose.html">68. Links With Same Name Must Have A Similar Purpose</option>
+        <option value="main-landmark-should-not-be-contained-in-another-landmark.html">69. Main Landmark Should Not Be Contained In Another Landmark</option>
+        <option value="marquee-elements-are-deprecated-and-must-not-be-used.html">70. Marquee Elements Are Deprecated And Must Not Be Used</option>
+        <option value="more-than-one-main-landmark.html">71. More Than One Main Landmark</option>
+        <option value="object-elements-must-have-alternate-text.html">72. Object Elements Must Have Alternate Text</option>
+        <option value="page-must-have-means-to-bypass-repeated-blocks-.html">73. Page Must Have Means To Bypass Repeated Blocks</option>
+        <option value="page-should-contain-a-level-one-heading.html">74. Page Should Contain A Level One Heading</option>
+        <option value="required-aria-attributes-must-be-provided.html">75. Required Aria Attributes Must Be Provided</option>
+        <option value="role-img-elements-must-have-an-alternative-text.html">76. Role Img Elements Must Have An Alternative Text</option>
+        <option value="role-text-should-have-no-focusable-descendants.html">77. Role Text Should Have No Focusable Descendants</option>
+        <option value="scrollable-region-must-have-keyboard-access.html">78. Scrollable Region Must Have Keyboard Access</option>
+        <option value="select-element-must-have-an-accessible-name.html">79. Select Element Must Have An Accessible Name</option>
+        <option value="server-side-image-maps-must-not-be-used.html">80. Server Side Image Maps Must Not Be Used</option>
+        <option value="skip-link-target-should-exist-and-be-focusable.html">81. Skip Link Target Should Exist And Be Focusable</option>
+        <option value="svg-elements-with-an-img-role-must-have-an-alternative-text.html">82. Svg Elements With An Img Role Must Have An Alternative Text</option>
+        <option value="table-cells-that-use-the-headers-attribute-must-only-refer-to-cells-in-the-same-table.html">83. Table Cells That Use The Headers Attribute Must Only Refer To Cells In The Same Table</option>
+        <option value="table-header-text-should-not-be-empty.html">84. Table Header Text Should Not Be Empty</option>
+        <option value="table-headers-in-a-data-table-must-refer-to-data-cells.html">85. Table Headers In A Data Table Must Refer To Data Cells</option>
+        <option value="tables-should-not-have-same-summary-and-caption.html">86. Tables Should Not Have Same Summary And Caption</option>
+        <option value="ul-and-ol-must-only-directly-contain-li-script-or-template-elements.html">87. Ul And Ol Must Only Directly Contain Li Script Or Template Elements</option>
+        <option value="users-should-be-able-to-zoom-and-scale-text-up-to-500-percent.html">88. Users Should Be Able To Zoom And Scale Text Up To 500 Percent</option>
+        <option value="video-elements-must-have-captions.html">89. Video Elements Must Have Captions</option>
+        <option value="video-or-audio-elements-must-not-play-automatically.html">90. Video Or Audio Elements Must Not Play Automatically</option>
+        <option value="zooming-and-scaling-must-not-be-disabled.html">91. Zooming And Scaling Must Not Be Disabled</option>
+    </select>
+    <br><br>
+ 
     <h1>Server-side image maps must not be used</h1>
     
     <img src="server-side-image-map.jpg" usemap="#servermap">
