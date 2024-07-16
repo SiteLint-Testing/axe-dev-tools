@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autocomplete attribute must be used correctly</title>
+    <script>
+        (function(w,d,s,a,m,t) {
+            a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=e0e568cd35f15dcb5a7b98805e8ef5c447ef519ebcdbbea8a508da215390616e';
+
+            function onPageLoaded() {
+                w.clearTimeout(t);
+                w.removeEventListener('DOMContentLoaded', onPageLoaded);
+
+                function loadSiteLintAuditor() {
+                    m.parentNode.insertBefore(a, m);
+                }
+                w.setTimeout(loadSiteLintAuditor, 3500);
+            }
+            function onAuditorLoaded(){
+                auditor.config({
+                    includeHidden: true,
+                    stripTextFromReport: false,
+                    watchDomChanges: true
+                }).run();
+            }
+
+            a.addEventListener('load', onAuditorLoaded);
+
+            if (d.readyState !== 'loading') {
+                onPageLoaded();
+                return;
+            }
+
+            w.addEventListener('DOMContentLoaded', onPageLoaded);
+        })(window, document, 'script');
+    </script>
+</head>
+<body>
+    <h1>autocomplete attribute must be used correctly</h1>
+
+    <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" autocomplete="off"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="nope"><br><br>
+
+        <label for="address">Street Address:</label>
+        <input type="text" id="address" name="address" autocomplete="address-line2"><br><br>
+
+        <label for="cc-number">Credit Card Number:</label>
+        <input type="text" id="cc-number" name="cc-number" autocomplete="credit-card-number"><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" autocomplete="cell"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

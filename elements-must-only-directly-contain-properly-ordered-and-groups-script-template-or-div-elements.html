@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;dl&gt; elements must only directly contain properly-ordered &lt;dt&gt; and &lt;dd&gt; groups, &lt;script&gt;, &lt;template&gt; or &lt;div&gt; elements</title>
+    <script>
+    (function(w,d,s,a,m,t) {
+        a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=e0e568cd35f15dcb5a7b98805e8ef5c447ef519ebcdbbea8a508da215390616e';
+
+        function onPageLoaded() {
+            w.clearTimeout(t);
+            w.removeEventListener('DOMContentLoaded', onPageLoaded);
+
+            function loadSiteLintAuditor() {
+                m.parentNode.insertBefore(a, m);
+            }
+            w.setTimeout(loadSiteLintAuditor, 3500);
+        }
+        function onAuditorLoaded(){
+            auditor.config({
+                includeHidden: true,
+                stripTextFromReport: false,
+                watchDomChanges: true
+            }).run();
+        }
+
+        a.addEventListener('load', onAuditorLoaded);
+
+        if (d.readyState !== 'loading') {
+            onPageLoaded();
+            return;
+        }
+
+        w.addEventListener('DOMContentLoaded', onPageLoaded);
+    })(window, document, 'script');
+    </script>
+</head>
+<body>
+    <h1>&lt;dl&gt; elements must only directly contain properly-ordered &lt;dt&gt; and &lt;dd&gt; groups, &lt;script&gt;, &lt;template&gt; or &lt;div&gt; elements</h1>
+    <dl>
+        <dt>Term 1</dt>
+        <p>Improper element within dl</p>
+        <dd>Definition 1</dd>
+        <dt>Term 2</dt>
+        <dt>Another term without definition</dt>
+        <dd>Definition 2</dd>
+        <dd>Another definition without term</dd>
+    </dl>
+    <p>Note: This is a bad example where &lt;dl&gt; elements do not contain properly-ordered &lt;dt&gt; and &lt;dd&gt; groups.</p>
+</body>
+</html>

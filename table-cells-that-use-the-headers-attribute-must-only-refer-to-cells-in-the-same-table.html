@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table cells that use the headers attribute must only refer to cells in the same table</title>
+    <script>
+        (function(w,d,s,a,m,t) {
+            a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=e0e568cd35f15dcb5a7b98805e8ef5c447ef519ebcdbbea8a508da215390616e';
+
+            function onPageLoaded() {
+                w.clearTimeout(t);
+                w.removeEventListener('DOMContentLoaded', onPageLoaded);
+
+                function loadSiteLintAuditor() {
+                    m.parentNode.insertBefore(a, m);
+                }
+                w.setTimeout(loadSiteLintAuditor, 3500);
+            }
+            function onAuditorLoaded(){
+                auditor.config({
+                    includeHidden: true,
+                    stripTextFromReport: false,
+                    watchDomChanges: true
+                }).run();
+            }
+
+            a.addEventListener('load', onAuditorLoaded);
+
+            if (d.readyState !== 'loading') {
+                onPageLoaded();
+                return;
+            }
+
+            w.addEventListener('DOMContentLoaded', onPageLoaded);
+        })(window, document, 'script');
+    </script>
+</head>
+<body>
+    <h1>Table cells that use the headers attribute must only refer to cells in the same table</h1>
+    <table border="1">
+        <tr>
+            <th id="header1">Header 1</th>
+            <th id="header2">Header 2</th>
+        </tr>
+        <tr>
+            <td headers="header3">Data 1</td>
+            <td headers="header4">Data 2</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th id="header3">Header 3</th>
+            <th id="header4">Header 4</th>
+        </tr>
+        <tr>
+            <td>Data 3</td>
+            <td>Data 4</td>
+        </tr>
+    </table>
+    <p>This document has table cells using the headers attribute that refer to cells in a different table, breaking the accessibility requirement.</p>
+</body>
+</html>

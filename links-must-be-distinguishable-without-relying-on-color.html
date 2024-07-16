@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links must be distinguishable without relying on color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            color: #000000;
+        }
+        .content a {
+            color: #333333; /* Less than 3:1 contrast ratio */
+            text-decoration: none; /* No distinct style */
+        }
+        .content a:focus,
+        .content a:hover {
+            color: #000000; /* No distinct style on focus or hover */
+        }
+    </style>
+    <script>
+        (function(w,d,s,a,m,t) {
+            a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=e0e568cd35f15dcb5a7b98805e8ef5c447ef519ebcdbbea8a508da215390616e';
+        
+            function onPageLoaded() {
+                w.clearTimeout(t);
+                w.removeEventListener('DOMContentLoaded', onPageLoaded);
+        
+                function loadSiteLintAuditor() {
+                    m.parentNode.insertBefore(a, m);
+                }
+                w.setTimeout(loadSiteLintAuditor, 3500);
+            }
+            function onAuditorLoaded(){
+                auditor.config({
+                    includeHidden: true,
+                    stripTextFromReport: false,
+                    watchDomChanges: true
+                }).run();
+            }
+        
+            a.addEventListener('load', onAuditorLoaded);
+        
+            if (d.readyState !== 'loading') {
+                onPageLoaded();
+                return;
+            }
+        
+            w.addEventListener('DOMContentLoaded', onPageLoaded);
+        })(window, document, 'script');
+    </script>
+</head>
+<body>
+    <h1>Links must be distinguishable without relying on color</h1>
+    <div class="content">
+        <p>This is a paragraph with some <a href="#">links</a> that are not distinguishable by anything other than color. This fails the accessibility requirement because users who cannot distinguish between the colors cannot easily identify the link.</p>
+        <p>Here is another <a href="#">example link</a> within a block of text that lacks sufficient contrast and does not change style on focus or hover.</p>
+    </div>
+</body>
+</html>
