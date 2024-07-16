@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Users should be able to zoom and scale the text up to 500%</title>
+    <script>
+        (function(w,d,s,a,m,t) {
+            a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=e0e568cd35f15dcb5a7b98805e8ef5c447ef519ebcdbbea8a508da215390616e';
+
+            function onPageLoaded() {
+                w.clearTimeout(t);
+                w.removeEventListener('DOMContentLoaded', onPageLoaded);
+
+                function loadSiteLintAuditor() {
+                    m.parentNode.insertBefore(a, m);
+                }
+                w.setTimeout(loadSiteLintAuditor, 3500);
+            }
+            function onAuditorLoaded(){
+                auditor.config({
+                    includeHidden: true,
+                    stripTextFromReport: false,
+                    watchDomChanges: true
+                }).run();
+            }
+
+            a.addEventListener('load', onAuditorLoaded);
+
+            if (d.readyState !== 'loading') {
+                onPageLoaded();
+                return;
+            }
+
+            w.addEventListener('DOMContentLoaded', onPageLoaded);
+        })(window, document, 'script');
+    </script>
+</head>
+<body>
+    <h1>Users should be able to zoom and scale the text up to 500%</h1>
+    <p>This page is intentionally set to prevent user scaling and zooming beyond 100%.</p>
+    <p>It includes <code>user-scalable="no"</code> and <code>maximum-scale=1.0</code> in the viewport meta tag.</p>
+</body>
+</html>
