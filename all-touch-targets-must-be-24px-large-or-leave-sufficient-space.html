@@ -14,6 +14,8 @@
             text-align: center;
             line-height: 20px;
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
         .button-large {
             width: 24px;
@@ -24,6 +26,8 @@
             text-align: center;
             line-height: 24px;
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -132,15 +136,15 @@
     <h1>All touch targets must be 24px large, or leave sufficient space</h1>
     
     <h2>Incorrect Example</h2>
-    <div class="button-small">1</div>
-    <div class="button-small">2</div>
-    <div class="button-small">3</div>
+    <button class="button-small">1</button>
+    <button class="button-small">2</button>
+    <button class="button-small">3</button>
     <p>This document includes touch targets that are smaller than 24px and are touching each other, breaking the accessibility requirement.</p>
 
     <h2>Correct Example</h2>
-    <div class="button-large">A</div>
-    <div class="button-large">B</div>
-    <div class="button-large">C</div>
+    <button class="button-large">A</button>
+    <button class="button-large">B</button>
+    <button class="button-large">C</button>
     <p>This document includes touch targets that are at least 24px and have sufficient spacing between them, meeting the accessibility requirement.</p>
 
     <p>&nbsp;</p>
