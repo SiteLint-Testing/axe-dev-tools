@@ -34,6 +34,20 @@
 
             w.addEventListener('DOMContentLoaded', onPageLoaded);
         })(window, document, 'script');
+        function navigateToPage() {
+            var select = document.getElementById("page-selector");
+            var selectedValue = select.value;
+
+            if (selectedValue) {
+                if (selectedValue.startsWith("http")) {
+                    // Opens the external link in a new tab
+                    window.open(selectedValue, '_blank');
+                } else {
+                    // Opens internal links in the same tab
+                    location.href = selectedValue;
+                }
+            }
+        }
     </script>
 </head>
 <body>
