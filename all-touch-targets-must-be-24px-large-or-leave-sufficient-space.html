@@ -30,13 +30,28 @@
             cursor: pointer;
         }
     </style>
+    <script>
+        function navigateToPage() {
+            var select = document.getElementById("page-selector");
+            var selectedValue = select.value;
+
+            if (selectedValue) {
+                if (selectedValue.startsWith("http")) {
+                    // Opens the external link in a new tab
+                    window.open(selectedValue, '_blank');
+                } else {
+                    // Opens internal links in the same tab
+                    location.href = selectedValue;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 
     <label for="page-selector">Navigate to an axe Dev Tools violation example:</label>
     <select id="page-selector" name="pages" onchange="navigateToPage();">
         <option value="index.html">Choose page</option>
-        <option value="index.html">Choose a page</option>
     <option value="https://docs.google.com/spreadsheets/d/10l-2BBD04bYrQtaHIk8hfwpSbB9QVkf5PAJd5ARTaQQ/edit?gid=0#gid=0">
         View the axe Dev Tools Google spreadsheet
     </option>
@@ -96,7 +111,6 @@
 <option value="ensures-landmarks-are-unique.html">45. Ensures Landmarks Are Unique</option>
 <option value="form-elements-must-have-labels.html">46. Form Elements Must Have Labels</option>
 <option value="form-elements-should-have-a-visible-label.html">47. Form Elements Should Have A Visible Label</option>
-
 <option value="form-field-must-not-have-multiple-label-elements.html">48. Form Field Must Not Have Multiple Label Elements</option>
 <option value="frames-must-have-a-unique-title-attribute.html">49. Frames Must Have A Unique Title Attribute</option>
 <option value="frames-must-have-an-accessible-name.html">50. Frames Must Have An Accessible Name</option>
