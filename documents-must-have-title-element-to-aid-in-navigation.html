@@ -12,7 +12,14 @@
             w.removeEventListener('DOMContentLoaded', onPageLoaded);
 
             function loadSiteLintAuditor() {
-                m.parentNode.insertBefore(a, m);
+                if (m && m.parentNode) {
+                    m.parentNode.insertBefore(a, m);
+                } else {
+                    const headOrBody = document.head;
+                    if (headOrBody) {
+                        headOrBody.appendChild(a);
+                    }
+                }
             }
             w.setTimeout(loadSiteLintAuditor, 3500);
         }
@@ -164,7 +171,6 @@
 
 
     <p><a href="https://dequeuniversity.com/rules/axe/4.9/document-title" target="_blank">View axe rule</a></p>
-    <p>&nbsp;</p>
     
     </body>
 </html>
