@@ -29,7 +29,14 @@
                 w.removeEventListener('DOMContentLoaded', onPageLoaded);
         
                 function loadSiteLintAuditor() {
-                    m.parentNode.insertBefore(a, m);
+                    if (m && m.parentNode) {
+                        m.parentNode.insertBefore(a, m);
+                    } else {
+                        const headOrBody = document.head;
+                        if (headOrBody) {
+                            headOrBody.appendChild(a);
+                        }
+                    }
                 }
                 w.setTimeout(loadSiteLintAuditor, 3500);
             }
